@@ -1,66 +1,75 @@
 # Web Browser Plugin
 
-> 一个轻量级的嵌入式浏览器面板，作为 Hermes Desktop 插件运行。
+A **Hermes Desktop Plugin** that embeds a full-featured browser pane into your workspace. Browse the web directly inside Hermes -- no window switching required.
 
-在 Hermes Desktop 中直接浏览网页——无需切换窗口。支持后退/前进导航、手动刷新和收藏夹管理。
+[中文文档](README.zh.md)
 
 ![Hermes Desktop Web Browser Plugin](screenshot.png)
 
-## 功能
+## Features
 
-- 🌐 **嵌入式 iframe 浏览器**——在 Hermes 侧栏中直接渲染网页
-- 🔙 **后退/前进导航**——维护浏览历史栈
-- 🔄 **刷新**——一键重新加载当前页面
-- ⭐ **收藏夹**——下拉菜单管理、添加/删除收藏页面，数据持久化到 `ctx.storage`
-- ⌨️ **快捷键**——`Ctrl+Shift+B` 切换面板显示
-- 📌 **状态栏按钮**——快速显示/隐藏浏览器面板
+- **Embedded iframe browser** -- render web pages in a Hermes side panel
+- **Back/Forward navigation** -- history stack with prev/next buttons
+- **Refresh** -- one-click page reload
+- **Bookmarks** -- drop-down menu with add/remove, persisted via `ctx.storage`
+- **Keyboard shortcut** -- `Ctrl+Shift+B` to toggle the panel
+- **Status bar toggle** -- globe icon to show/hide the browser pane
 
-## 安装
+## Installation
 
-### 前提条件
+### Prerequisites
 
-- [Hermes Agent](https://hermes-agent.nousresearch.com) Desktop 版（插件在 CLI 模式下不可用）
+- [Hermes Agent](https://hermes-agent.nousresearch.com) Desktop (the plugin does not work in CLI mode)
 
-### 安装步骤
+### Steps
 
-```bash
-# 克隆仓库
-git clone https://github.com/<your-username>/web-browser-plugin.git
+**Option A -- Let Hermes install it (recommended)**
 
-# 复制到 Hermes 桌面插件目录
-cp -r web-browser-plugin ~/.hermes/desktop-plugins/web-browser-plugin
+Copy the line below and paste it to your Hermes Agent:
 
-# 重启插件（或在 Hermes 命令面板中执行 "Reload desktop plugins"）
+```
+Install the Hermes Desktop Plugin from https://github.com/AWhileLater/web-browser-plugin
 ```
 
-插件会在几秒内自动加载。如果没有出现，在命令面板（`Ctrl+K`）中搜索 **Reload desktop plugins** 并执行。
+That's it -- Hermes will clone the repository and set everything up automatically.
 
-## 使用
+**Option B -- Manual install**
 
-1. 点击 Hermes Desktop 状态栏中的 🌐 图标，或按下 `Ctrl+Shift+B` 打开浏览器面板
-2. 在地址栏输入 URL 并回车（或点击发送按钮）
-3. 使用工具栏按钮进行后退/前进/刷新操作
-4. 点击 ⭐ 将当前页面加入收藏夹
+```bash
+git clone https://github.com/AWhileLater/web-browser-plugin.git
+cp -r web-browser-plugin ~/.hermes/desktop-plugins/web-browser-plugin
+```
 
-## 项目结构
+After either method, reload plugins by running **Reload desktop plugins** from the command palette (`Ctrl+K`).
+
+## Usage
+
+1. Click the globe icon in the Hermes Desktop status bar, or press `Ctrl+Shift+B` to open the browser panel
+2. Type a URL in the address bar and press Enter (or click the Go button)
+3. Use the toolbar buttons for back/forward/refresh
+4. Click the star to bookmark the current page
+
+## Project Structure
 
 ```
 web-browser-plugin/
-├── plugin.js      # 插件主文件——纯 ESM JavaScript
-├── README.md      # 本文件
-└── LICENSE        # MIT 许可证
+├── plugin.js         # Main plugin file -- plain ESM JavaScript
+├── README.md         # This file (English)
+├── README.zh.md      # Chinese translation
+├── LICENSE           # MIT License
+└── screenshot.png    # Screenshot in action
 ```
 
-## 开发
+## Development
 
-插件是纯 ESM JavaScript，无构建步骤。修改 `plugin.js` 后保存即热重载。
+The plugin is plain ESM JavaScript -- no build step. Save changes to `plugin.js` and it hot-reloads automatically.
 
-### 约定
+### Conventions
 
-- 插件 ID：`web-browser-plugin`
-- 导出格式：`export default { id, name, register(ctx) }`
-- 依赖仅限于 `@hermes/plugin-sdk` 和 `react`
+- Plugin ID: `web-browser-plugin`
+- Export signature: `export default { id, name, register(ctx) }`
+- Dependencies limited to `@hermes/plugin-sdk` and `react`
 
-## 许可证
+## License
 
-MIT © [你的名字]
+MIT
