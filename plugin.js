@@ -345,7 +345,7 @@ function BrowserPane({ storage }) {
 // ---------------------------------------------------------------------------
 
 export default {
-  id: 'web-browser',
+  id: 'web-browser-plugin',
   name: 'Web Browser',
   defaultEnabled: true,
 
@@ -396,7 +396,7 @@ export default {
       data: {
         id: 'web-browser-toggle',
         label: 'Browser',
-        title: $visible.get() ? 'Hide Browser' : 'Show Browser',
+        title: 'Browser Plugin',
         icon: jsx('svg', {
           xmlns: 'http://www.w3.org/2000/svg',
           width: 14,

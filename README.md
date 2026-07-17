@@ -4,7 +4,7 @@
 
 在 Hermes Desktop 中直接浏览网页——无需切换窗口。支持后退/前进导航、手动刷新和收藏夹管理。
 
-![screenshot](https://github.com/user-attachments/assets/placeholder)
+![Hermes Desktop Web Browser Plugin](screenshot.png)
 
 ## 功能
 
@@ -57,7 +57,7 @@ web-browser-plugin/
 
 ### 约定
 
-- 插件 ID：`web-browser`（与文件夹名不同，避免破坏已有用户配置）
+- 插件 ID：`web-browser-plugin`
 - 导出格式：`export default { id, name, register(ctx) }`
 - 依赖仅限于 `@hermes/plugin-sdk` 和 `react`
 
